@@ -6,7 +6,7 @@ export const validateYouTubeUrl = (inputUrl) => {
         var match = url.match(regExp);
         if (match && match[2].length === 11) {
 
-            return true
+            return match
         }
         else {
             return false

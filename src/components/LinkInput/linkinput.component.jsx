@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import './linkinput.styles.scss';
-
+import {connect} from 'react-redux';
 import {validateYouTubeUrl} from './constants';
+import {addToPlaylist} from '../../redux/playlistQueue/playlistQueue.actions';
 
 class LinkInput extends Component {
 
@@ -11,36 +12,48 @@ class LinkInput extends Component {
 
     submitHandler = (event) => {
         if(event.key === 'Enter') {
-            let isvalid = validateYouTubeUrl(this.state.inputField);
-            console.log(isvalid)
+            let url = validateYouTubeUrl(this.state.inputField);
+            if(url) {
+                this.props.addToQueue(url[2])
+                this.setState({
+                    inputField: ''
+                })
 
-            return true
+                return true
+            }
+            else {
+                alert("Not a valid link.")
+            }
         }
-        else 
-            return false
+        
     } 
 
-    
-
     render() {
-
+        const { inputField } =this.state
 
         return (
             <div className = 'LinkInputWrapper'>
-                <span className = "addingLink">
-                    Add youtube link:
-                </span>
-                <input 
+                <div className = 'add-link-wrapper'>
+                    <span className = "addingLink">
+                        Add YouTube link:
+                    </span>
+                </div>
+                <input
+                    type = 'text'
+                    value = {inputField}
                     className = "inputBar" 
                     onChange = {(event) => this.setState({inputField: event.target.value})}
-                    onKeyDown = {(event) => this.submitHandler(event)} 
-
+                    onKeyDown = {(event) => this.submitHandler(event)}
+                    placeholder = 'e.g https://youtu.be/s_3ATmupvCQ'
                 />
             </div>
         );
     }
 }
 
+const mapDispatchToProps = dispatch => ({
+    addToQueue: (value) => dispatch(addToPlaylist(value))
+})
 
 
-export default LinkInput;
+export default connect(null,mapDispatchToProps)(LinkInput);

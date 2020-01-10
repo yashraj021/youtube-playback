@@ -1,3 +1,7 @@
 import { combineReducers } from 'redux';
 
-export default combineReducers({});
+import queueListState from './playlistQueue/playlistQueue.reducer';
+
+export default combineReducers({
+    playlistQueue: queueListState
+});

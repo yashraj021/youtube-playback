@@ -3,8 +3,28 @@
     display: flex;
     margin-top: 50px;
     margin-bottom: 30px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    width: 1300px;
+    padding-bottom: 10px;
+
+    .add-link-wrapper{
+        width: 200px;
+        
+
+        .addingLink {
+            margin-left: 10px;
+            text-align: center;
+        }
+    }
+    
 
     .inputBar {
-        width: 500px;
+        height: 20px;
+        width: 100%;
+        padding-left: 10px;
+        border-radius: 3px;
+        border: 1px solid white;
     }
 }
