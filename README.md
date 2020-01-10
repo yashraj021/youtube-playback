@@ -11,6 +11,7 @@ Link to other projects:-
      APK link:- https://drive.google.com/open?id=1zJmcb6pE2avnlU1nelDtcyEiz-0xBJou
      
                              
-Contact Info:- E-mail: yash.raj021@gmail.com
+Contact Info:- Name:- Yash
+               E-mail: yash.raj021@gmail.com
                Phone No: 9801306775     
 
