@@ -15,7 +15,9 @@
     "react-web-vector-icons": "^1.0.2",
     "react-youtube": "^7.9.0",
     "redux": "^4.0.5",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "redux-state-sync": "^3.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
